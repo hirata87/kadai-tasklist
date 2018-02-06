@@ -11,11 +11,15 @@
 |
 */
 
-Route::get('/', 'TasksController@index'); 
+//20180206 Route::get('/', 'TasksController@index'); 
 
 //CRUD
 
 Route::resource('tasks', 'TasksController');
+
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // ユーザ登録
 Route::get('signup', 'Auth\AuthController@getRegister')->name('signup.get');
